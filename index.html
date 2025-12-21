@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sergiusz Siemaszko | Psychologia w Biznesie & Web Dev</title>
+    <title>Sergiusz Siemaszko | IT & Psychologia w Biznesie</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             /* KOLORYSTYKA: Nocne miasto (Dark Navy + Gold) */
-            --bg-dark: #0b1121;      /* Głęboki granat tła */
-            --bg-card: #151f32;      /* Jaśniejszy granat dla sekcji */
-            --text-main: #f8fafc;    /* Biel */
-            --text-muted: #94a3b8;   /* Szary tekst pomocniczy */
-            --accent-gold: #fbbf24;  /* Złoty akcent */
+            --bg-dark: #0b1121;
+            --bg-card: #151f32;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-gold: #fbbf24;
             --accent-glow: rgba(251, 191, 36, 0.15);
             
             --font-main: 'Outfit', sans-serif;
@@ -25,12 +25,13 @@
             font-family: var(--font-main);
             background-color: var(--bg-dark);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
         
+        /* PRZYCISKI */
         .btn {
             display: inline-block; padding: 12px 28px; font-weight: 600; text-decoration: none;
             border-radius: var(--radius); transition: all 0.3s ease; border: 1px solid transparent;
@@ -49,105 +50,129 @@
         .btn-outline:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
 
         /* --- HEADER --- */
-        header { padding: 20px 0; width: 100%; z-index: 10; }
+        header { padding: 20px 0; width: 100%; z-index: 10; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 700; font-size: 1.2rem; color: var(--text-main); text-transform: uppercase; letter-spacing: 1px; }
+        .logo { font-weight: 700; font-size: 1.3rem; color: var(--text-main); text-transform: uppercase; letter-spacing: 1px; text-decoration: none; }
         .logo span { color: var(--accent-gold); }
-        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 24px; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 24px; font-size: 0.95rem; transition: 0.3s; font-weight: 500; }
         .nav-links a:hover { color: var(--accent-gold); }
 
         /* --- HERO SECTION --- */
         .hero {
-            background-color: var(--bg-dark);
             background: radial-gradient(circle at top right, #1e293b, var(--bg-dark));
             min-height: 85vh;
             display: flex; align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding: 60px 0;
+            padding: 80px 0;
         }
         
         .hero-layout {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
         }
 
         .hero-subtitle {
-            color: var(--accent-gold); text-transform: uppercase; letter-spacing: 2px;
-            font-size: 0.85rem; font-weight: 700; margin-bottom: 16px; display: block;
+            color: var(--accent-gold); text-transform: uppercase; letter-spacing: 3px;
+            font-size: 0.85rem; font-weight: 700; margin-bottom: 20px; display: block;
         }
-        h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 24px; font-weight: 700; }
-        .hero-desc { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 32px; font-weight: 300; }
+        h1 { font-size: 3.8rem; line-height: 1.1; margin-bottom: 24px; font-weight: 700; }
+        .hero-desc { color: var(--text-muted); font-size: 1.15rem; margin-bottom: 35px; font-weight: 300; max-width: 90%; }
 
-        .hero-img-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        .hero-img-box { display: flex; justify-content: center; align-items: center; }
         .profile-photo {
-            width: 350px;
-            height: 350px;
+            width: 380px; height: 380px;
             border-radius: 50%;
             object-fit: cover;
             object-position: top center;
             border: 4px solid var(--accent-gold);
-            box-shadow: 0 0 30px rgba(251, 191, 36, 0.2);
+            box-shadow: 0 0 40px rgba(251, 191, 36, 0.15);
         }
 
-        /* --- SEKCJE --- */
-        .section { padding: 80px 0; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-        .section-title { font-size: 2rem; margin-bottom: 20px; }
+        /* --- SEKCJE OGÓLNE --- */
+        .section { padding: 100px 0; }
+        .section-title { font-size: 2.2rem; margin-bottom: 40px; }
         .section-title span { color: var(--accent-gold); }
-        .bio-text p { margin-bottom: 16px; color: var(--text-muted); }
+        
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
         
         .highlight-box {
-            background: var(--bg-card); padding: 30px; border-radius: var(--radius);
-            border: 1px solid rgba(255,255,255,0.05);
+            background: var(--bg-card); padding: 35px; border-radius: var(--radius);
+            border: 1px solid rgba(255,255,255,0.05); height: 100%;
         }
-        .highlight-box h3 { margin-bottom: 15px; font-size: 1.2rem; }
-        .edu-item { border-left: 2px solid var(--accent-gold); padding-left: 20px; margin-bottom: 20px; }
-        .edu-date { font-size: 0.85rem; color: var(--accent-gold); margin-bottom: 5px; display: block; }
+        .highlight-box h3 { margin-bottom: 20px; font-size: 1.4rem; color: var(--text-main); }
 
-        .interests-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 40px; }
+        /* --- STACK TECHNOLOGICZNY --- */
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .tech-badge {
+            background: rgba(251, 191, 36, 0.1); color: var(--accent-gold);
+            padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;
+            border: 1px solid rgba(251, 191, 36, 0.2);
+        }
+
+        /* --- ŚCIEŻKA KARIERY (TIMELINE) --- */
+        .timeline { position: relative; padding-left: 30px; border-left: 2px solid rgba(255,255,255,0.1); }
+        .timeline-item { position: relative; margin-bottom: 40px; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-dot {
+            position: absolute; left: -36px; top: 5px; width: 14px; height: 14px;
+            background: var(--accent-gold); border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+        .timeline-date { font-size: 0.85rem; color: var(--accent-gold); font-weight: 600; margin-bottom: 5px; display: block; text-transform: uppercase; }
+        .timeline-role { font-size: 1.2rem; font-weight: 700; color: var(--text-main); }
+        .timeline-company { font-size: 1rem; color: var(--text-muted); margin-bottom: 10px; display: block; }
+        .timeline-desc { font-size: 0.95rem; color: var(--text-muted); }
+
+        /* --- ZAINTERESOWANIA (POPRAWIONY GRID) --- */
+        .interests-grid {
+            display: grid;
+            /* Zmiana na sztywny grid 2 kolumnowy na desktopie, żeby były ładnie obok siebie */
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 30px; margin-top: 40px;
+        }
         .interest-card {
-            background: var(--bg-card); padding: 30px; border-radius: var(--radius);
-            transition: 0.3s; border-top: 3px solid transparent;
+            background: var(--bg-card); padding: 35px; border-radius: var(--radius);
+            transition: 0.3s; border-top: 3px solid transparent; height: 100%;
         }
-        .interest-card:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
-        .interest-card h4 { margin-bottom: 10px; font-size: 1.1rem; color: var(--text-main); }
-        .interest-card p { font-size: 0.9rem; color: var(--text-muted); }
+        .interest-card:hover {
+            transform: translateY(-7px); border-color: var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .interest-card h4 { margin-bottom: 15px; font-size: 1.3rem; color: var(--text-main); }
+        .interest-card p { font-size: 1rem; color: var(--text-muted); line-height: 1.6; }
 
-        /* --- KONTAKT (NOWY STYL) --- */
+        /* --- KONTAKT --- */
         .cta-section {
-            background: linear-gradient(135deg, var(--bg-card), var(--bg-dark));
-            padding: 100px 0; text-align: center;
+            background: linear-gradient(135deg, #0f1623, #050914);
+            padding: 120px 0; text-align: center;
             border-top: 1px solid rgba(255,255,255,0.05);
         }
         .contact-box {
-            max-width: 600px; margin: 40px auto 0;
-            padding: 40px; background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.05); border-radius: var(--radius);
+            max-width: 650px; margin: 40px auto 0;
+            padding: 50px; background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius);
+            backdrop-filter: blur(10px);
         }
         .email-display {
-            display: block; font-size: 1.5rem; color: var(--accent-gold);
-            text-decoration: none; margin: 20px 0 30px 0; font-weight: 700;
-            transition: 0.3s; word-break: break-all; /* Żeby się nie rozjechało na mobile */
+            display: block; font-size: 1.8rem; color: var(--accent-gold);
+            text-decoration: none; margin: 25px 0 35px 0; font-weight: 700;
+            transition: 0.3s; word-break: break-all;
         }
-        .email-display:hover { color: #fff; text-shadow: 0 0 15px var(--accent-glow); }
+        .email-display:hover { color: #fff; text-shadow: 0 0 20px var(--accent-glow); transform: scale(1.02); }
         
-        footer { text-align: center; padding: 40px 0; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); }
+        footer { text-align: center; padding: 40px 0; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); }
 
-        /* MOBILE */
+        /* --- MOBILE --- */
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
+            h1 { font-size: 2.8rem; }
             .hero-layout { grid-template-columns: 1fr; text-align: center; }
             .hero-img-box { order: -1; margin-bottom: 30px; }
-            .profile-photo { width: 250px; height: 250px; }
+            .profile-photo { width: 260px; height: 260px; }
             .grid-2 { grid-template-columns: 1fr; gap: 40px; }
-            .nav-links { display: none; }
-            .email-display { font-size: 1.1rem; }
+            .nav-links { display: none; } /* Uproszczenie na mobile */
+            .email-display { font-size: 1.2rem; }
+            .interests-grid { grid-template-columns: 1fr; } /* Na telefonie jeden pod drugim */
         }
     </style>
 </head>
@@ -158,7 +183,8 @@
             <a href="#" class="logo">Sergiusz<span>.Siemaszko</span></a>
             <nav class="nav-links">
                 <a href="#o-mnie">O mnie</a>
-                <a href="#pasje">Pasje & IT</a>
+                <a href="#doswiadczenie">Kariera</a>
+                <a href="#pasje">Technologie & Pasje</a>
                 <a href="#kontakt">Kontakt</a>
             </nav>
         </div>
@@ -166,22 +192,21 @@
 
     <section class="hero">
         <div class="container hero-layout">
-            
             <div class="hero-content">
-                <span class="hero-subtitle">Psychologia & Technologia</span>
-                <h1>Analityczny umysł.<br>Kreatywne rozwiązania.</h1>
+                <span class="hero-subtitle">Psychologia w Biznesie & Development</span>
+                <h1>Koduję rozwiązania.<br>Zarządzam procesami.</h1>
                 <p class="hero-desc">
-                    Jestem studentem Psychologii w Biznesie i pasjonatem nowoczesnych technologii. 
-                    Łączę wiedzę o mechanizmach zarządzania z umiejętnościami programistycznymi.
+                    Łączę analityczne myślenie programisty z psychologicznym podejściem do biznesu. 
+                    Tworzę nowoczesne strony WWW i optymalizuję procesy, wykorzystując najnowsze technologie.
                 </p>
-                <a href="#kontakt" class="btn btn-gold">Napisz do mnie</a>
-                <a href="#pasje" class="btn btn-outline" style="margin-left: 15px;">Moje pasje</a>
+                <div style="margin-top: 30px;">
+                    <a href="#kontakt" class="btn btn-gold">Nawiąż współpracę</a>
+                    <a href="#doswiadczenie" class="btn btn-outline" style="margin-left: 15px;">Zobacz moje CV</a>
+                </div>
             </div>
-
             <div class="hero-img-box">
                 <img src="image.jpg" alt="Sergiusz Siemaszko" class="profile-photo">
             </div>
-
         </div>
     </section>
 
@@ -189,76 +214,127 @@
         <div class="container grid-2">
             <div class="bio-text">
                 <h2 class="section-title">O mnie</h2>
-                <p>
-                    Na co dzień studiuję na <strong>Uniwersytecie WSB Merito</strong> na kierunku 
-                    Psychologia w Biznesie (specjalność: Psychologia Menedżera). 
-                    Fascynują mnie mechanizmy zarządzania zespołem oraz psychologia marketingu.
+                <p style="color: var(--text-muted); margin-bottom: 20px;">
+                    Jestem studentem <strong>Psychologii w Biznesie</strong> na Uniwersytecie WSB Merito oraz dyplomowanym <strong>Technikiem Informatykiem</strong>. To unikalne połączenie pozwala mi patrzeć na projekty z dwóch perspektyw: technicznej (jak to działa?) oraz ludzkiej (jak użytkownik to odbierze?).
                 </p>
-                <p>
-                    W życiu prywatnym stawiam na dyscyplinę i wysoki poziom energii. 
-                    Prowadzę bardzo aktywny tryb życia i regularnie trenuję, co pozwala mi 
-                    zachować jasność umysłu w pracy i nauce.
+                <p style="color: var(--text-muted); margin-bottom: 20px;">
+                    Moja codzienność to ciągły rozwój. W pracy zawodowej wdrażałem kampanie marketingowe i optymalizowałem logistykę, a po godzinach rozwijam swoje umiejętności programistyczne.
                 </p>
-                <p>
-                    Moje podejście to ciągły rozwój – zarówno ten fizyczny, jak i intelektualny, 
-                    poprzez zgłębianie tematów finansów i nowych technologii.
-                </p>
+                
+                <div class="highlight-box" style="margin-top: 30px; border: 1px solid var(--accent-gold);">
+                    <h3 style="color: var(--accent-gold);">Mój Stack Technologiczny</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">
+                        Tworzę i rozwijam projekty wykorzystując nowoczesne narzędzia. Stale poszerzam horyzonty o nowe frameworki.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">HTML5</span>
+                        <span class="tech-badge">CSS3 / SCSS</span>
+                        <span class="tech-badge">JavaScript (ES6+)</span>
+                        <span class="tech-badge">PHP</span>
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">WordPress</span>
+                        <span class="tech-badge">Git</span>
+                    </div>
+                </div>
             </div>
             
             <div class="highlight-box">
-                <h3>Wykształcenie</h3>
-                <div class="edu-item">
-                    <span class="edu-date">2023 - Obecnie</span>
-                    <strong>Uniwersytet WSB Merito</strong><br>
-                    Kierunek: Psychologia w Biznesie<br>
-                    <small style="color:var(--text-muted)">Rozwój kompetencji przywódczych i zarządczych.</small>
-                </div>
-                <div class="edu-item">
-                    <span class="edu-date">2019 - 2023</span>
-                    <strong>Powiatowy Zespół Szkół w Bieruniu</strong><br>
-                    Tytuł: Technik Informatyk
+                <h3>Edukacja</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <span class="timeline-date">2023 - Obecnie</span>
+                        <div class="timeline-role">Uniwersytet WSB Merito</div>
+                        <span class="timeline-company">Kierunek: Psychologia w Biznesie</span>
+                        <p class="timeline-desc">Specjalność: Psychologia Menedżera. Rozwój kompetencji przywódczych, negocjacyjnych i zarządzania zespołem.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <span class="timeline-date">2019 - 2023</span>
+                        <div class="timeline-role">Powiatowy Zespół Szkół w Bieruniu</div>
+                        <span class="timeline-company">Tytuł: Technik Informatyk</span>
+                        <p class="timeline-desc">Solidne fundamenty IT: systemy operacyjne, sieci komputerowe, bazy danych i programowanie aplikacji.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="pasje" class="section" style="background-color: #0d1424;">
+    <section id="doswiadczenie" class="section" style="background-color: #0d1424;">
+        <div class="container">
+            <h2 class="section-title">Ścieżka <span>Kariery</span></h2>
+            <div class="highlight-box" style="max-width: 900px; margin: 0 auto;">
+                <div class="timeline">
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <span class="timeline-date">12.2024 - 08.2025</span>
+                        <div class="timeline-role">Specjalista ds. Sprzedaży i Marketingu</div>
+                        <span class="timeline-company">Prestige Sonia Wysocka</span>
+                        <p class="timeline-desc">
+                            Łączyłem psychologię sprzedaży z marketingiem. Wdrożyłem skuteczne kampanie promocyjne, które zwiększyły liczbę zapytań ofertowych. Prowadziłem negocjacje handlowe i dbałem o relacje z kluczowymi klientami.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <span class="timeline-date">07.2023 - 10.2024</span>
+                        <div class="timeline-role">Specjalista ds. Logistyki</div>
+                        <span class="timeline-company">Autopartner SA</span>
+                        <p class="timeline-desc">
+                            Odpowiadałem za optymalizację przestrzeni magazynowej i procesów kompletacji. Moje działania usprawniły przepływ towarów i zminimalizowały liczbę reklamacji logistycznych.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <span class="timeline-date">2021 - 2022 (Praktyki i Staż)</span>
+                        <div class="timeline-role">Młodszy Specjalista IT / Wsparcie Sprzedaży</div>
+                        <span class="timeline-company">Firma Handlowo-Usługowa Anwerk</span>
+                        <p class="timeline-desc">
+                            Pierwsze kroki w branży IT. Serwisowałem sprzęt komputerowy, konfigurowałem stanowiska pracy oraz dbałem o Visual Merchandising i profesjonalną obsługę klienta.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pasje" class="section">
         <div class="container">
             <h2 class="section-title">Pasje i <span>Kompetencje</span></h2>
-            <p style="color:var(--text-muted); max-width: 600px;">
-                Świat cyfrowy to moje naturalne środowisko. Po godzinach zajmuję się projektowaniem rozwiązań webowych oraz analizą rynków.
+            <p style="color:var(--text-muted); max-width: 700px; font-size: 1.1rem;">
+                Nie samą pracą człowiek żyje, choć moje pasje często przenikają się z życiem zawodowym.
+                Oto obszary, w których realizuję się po godzinach:
             </p>
 
             <div class="interests-grid">
                 <div class="interest-card">
-                    <h4>Web Development</h4>
+                    <h4>Web Development & Coding</h4>
                     <p>
-                        Projektowanie i obsługa stron WWW. Znam HTML, CSS oraz PHP. 
-                        <strong>Chcesz własną stronę?</strong> Napisz do mnie – chętnie zrealizuję Twój projekt.
+                        Świat kodu to dla mnie nieskończone możliwości. Projektuję funkcjonalne strony w <strong>HTML, CSS i PHP</strong>. Eksperymentuję z <strong>JavaScriptem i Pythonem</strong>, tworząc skrypty automatyzujące. Każdy projekt to dla mnie nowa zagadka logiczna do rozwiązania.
                     </p>
                 </div>
 
                 <div class="interest-card">
-                    <h4>Giełda i Krypto</h4>
+                    <h4>Rynki Finansowe i Krypto</h4>
                     <p>
-                        Analityczny umysł wykorzystuję zgłębiając tematykę finansów, giełdy i kryptografii. 
-                        Lubię analizować dane i trendy rynkowe.
+                        Mój analityczny umysł znajduje ujście na wykresach. Zgłębiam mechanizmy giełdowe, technologię <strong>Blockchain</strong> i kryptografię. Fascynuje mnie psychologia tłumu na rynkach i przewidywanie trendów ekonomicznych.
                     </p>
                 </div>
 
                 <div class="interest-card">
-                    <h4>Motoryzacja</h4>
+                    <h4>Nowoczesna Motoryzacja</h4>
                     <p>
-                        Samochody to moja dodatkowa pasja. Interesuje mnie zarówno technologia motoryzacyjna, 
-                        jak i design nowoczesnych pojazdów.
+                        Samochody to więcej niż transport – to technologia i design. Śledzę nowinki w inżynierii motoryzacyjnej. Interesuje mnie, jak systemy wbudowane zmieniają sposób, w jaki podróżujemy.
                     </p>
                 </div>
 
                 <div class="interest-card">
-                    <h4>Aktywny Tryb Życia</h4>
+                    <h4>Sport i Dyscyplina</h4>
                     <p>
-                        Sport uczy wytrwałości. Trening jest dla mnie kluczowym elementem dnia, 
-                        który buduje charakter i dyscyplinę niezbędną w biznesie.
+                        Wierzę w zasadę: silne ciało to silny umysł. Regularny trening uczy mnie pokory i wytrwałości, które są kluczowe w biznesie. Utrzymywanie wysokiego poziomu energii pozwala mi efektywnie łączyć studia z pracą i programowaniem.
                     </p>
                 </div>
             </div>
@@ -267,20 +343,24 @@
 
     <section id="kontakt" class="cta-section">
         <div class="container">
-            <h2 class="section-title">Współpraca</h2>
-            <p style="color:var(--text-muted)">
-                Szukasz nowoczesnej strony internetowej lub chcesz porozmawiać o projekcie?<br>
-                Skontaktuj się ze mną bezpośrednio mailowo.
+            <h2 class="section-title">Porozmawiajmy o <span>Współpracy</span></h2>
+            <p style="color:var(--text-muted); font-size: 1.1rem;">
+                Szukasz kogoś, kto połączy techniczną precyzję z biznesowym podejściem?<br>
+                Potrzebujesz strony internetowej lub wsparcia w projekcie? Jestem do dyspozycji.
             </p>
 
             <div class="contact-box">
-                <span style="color: var(--text-muted); font-size: 0.9rem;">Mój adres e-mail:</span>
+                <span style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Bezpośredni kontakt mailowy</span>
                 
                 <a href="mailto:siemaszkosergiusz@icloud.com" class="email-display">
                     siemaszkosergiusz@icloud.com
                 </a>
+                
+                <div style="margin-top: 10px; color: var(--text-muted);">
+                    Tel: <span style="color: var(--text-main);">(+48) 882 836 256</span>
+                </div>
 
-                <button onclick="copyEmail()" class="btn btn-outline" id="copyBtn">
+                <button onclick="copyEmail()" class="btn btn-outline" id="copyBtn" style="margin-top: 30px;">
                     Kopiuj adres e-mail
                 </button>
             </div>
@@ -289,7 +369,8 @@
 
     <footer>
         <div class="container">
-            &copy; 2025 Sergiusz Siemaszko. Wszelkie prawa zastrzeżone.
+            &copy; 2025 Sergiusz Siemaszko. Wszelkie prawa zastrzeżone.<br>
+            <span style="font-size: 0.8rem; opacity: 0.6;">Designed & Coded with passion.</span>
         </div>
     </footer>
 
@@ -298,15 +379,12 @@
             const email = "siemaszkosergiusz@icloud.com";
             const btn = document.getElementById("copyBtn");
             
-            // Kopiowanie do schowka
             navigator.clipboard.writeText(email).then(() => {
-                // Zmiana tekstu przycisku na sukces
                 const originalText = btn.innerHTML;
-                btn.innerHTML = "Skopiowano! ✅";
-                btn.classList.add("btn-gold"); // Dodanie złotego koloru dla efektu
+                btn.innerHTML = "Skopiowano do schowka! 📋";
+                btn.classList.add("btn-gold");
                 btn.classList.remove("btn-outline");
 
-                // Powrót do stanu pierwotnego po 2 sekundach
                 setTimeout(() => {
                     btn.innerHTML = "Kopiuj adres e-mail";
                     btn.classList.remove("btn-gold");
@@ -316,6 +394,16 @@
                 console.error('Błąd kopiowania: ', err);
             });
         }
+        
+        // Płynne przewijanie dla linków nawigacji
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 
 </body>
